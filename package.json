@@ -1,0 +1,23 @@
+{
+  "name": "qa-tools-playground-tests",
+  "version": "1.0.0",
+  "description": "Tests written for QATools Playground, a practice playground with two dummy apps (Shop + Clinic), tricky widgets, an API playground, click-to-inspect locator coach, verifiable challenges, and a Locators Game. Every interactive element is namespaced with stable data-testid, aria-label, and role + name.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccdita/qa-tools-playground-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ccdita/qa-tools-playground-tests/issues"
+  },
+  "homepage": "https://github.com/ccdita/qa-tools-playground-tests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.3.0"
+  }
+}
