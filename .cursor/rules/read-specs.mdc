@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+---
+
+# QATools Playground Development Guidelines - Use Specs as Context
+
+This project consists of tests for the QATools Playground web application, which is the System Under Test (SUT).
+
+When developing tests:
+
+1. **Read and follow the constitution** (`specs/constitution.md`) and **specs files** (`specs/`) when implementing.
+2. For features, **read and follow the spec file for that specific feature** (e.g., `specs/features/01-login.md` for the login feature).
+3. **Use `specs/engineering/test-automation-standards.md`** for best test automation practices.
