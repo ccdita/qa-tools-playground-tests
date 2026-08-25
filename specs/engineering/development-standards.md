@@ -9,5 +9,5 @@
 ## Feature Spec Guidelines
 
 - Feature spec files **must** be named as "##-feature.md" (e.g., 01-login.md).
-- Feature specs **must** have a three-part user story following the formula "As a [who], I [what] so that [why]" to capture a user's role, desired action, and desired benefit.
+- Feature specs **must** have a three-part user story following the formula "As a [who], I want to [what] so that [why]" to capture a user's role, desired action, and desired benefit.
 - Acceptance criteria in a feature spec **must** use Gherkin and follow the [Cucumber Gherkin Reference documentation](https://cucumber.io/docs/gherkin/reference/).
