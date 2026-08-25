@@ -11,7 +11,14 @@ The QATools Playground Shop exposes a login page at `/login`. Guests reach it fr
 - Email: `demo@promptqa.test`
 - Password: `Demo@1234`
 
-The login form (`data-testid="login-form"`) includes Email, Password, a **Remember me** checkbox, a **Sign in** submit button, and a **Create one** link to `/signup`. The form uses `novalidate`, so validation is application-controlled rather than native HTML5 popups.
+The login form (`data-testid="login-form"`) includes:
+- Email
+- Password
+- A **Remember me** checkbox
+- A **Sign in** submit button
+- A **Create one** link to `/signup`
+
+The form uses `novalidate`, so validation is application-controlled rather than native HTML5 popups.
 
 Successful sign-in stores the session in `localStorage.pqa_auth_user`. The navbar then shows the user's name (the demo user displays as **Demo**) and a logout control instead of **Sign in**.
 
@@ -42,7 +49,7 @@ Feature: Shop login
     And the shopper fills Password with a valid existing password
     And the shopper clicks Sign in
     Then the shopper is redirected to "/"
-    And the navbar shows the name "Demo"
+    And the navbar shows the user's name
     And a Logout control is visible
     And Sign in is not visible in the navbar
 
@@ -50,43 +57,41 @@ Feature: Shop login
     Given the shopper has signed in as the demo user
     When the shopper reloads the page
     Then the shopper remains signed in
-    And the navbar still shows the name "Demo"
+    And the navbar still shows the user's name
 
   Scenario: Empty email shows an inline validation error
     Given the shopper is on "/login"
     When the shopper leaves Email blank
     And the shopper fills Password with any value
     And the shopper clicks Sign in
-    Then an inline error is shown on the Email field
+    Then an inline error is shown under the Email field
     And the form is not submitted
     And the URL remains "/login"
 
   Scenario: Wrong password shows an authentication error
     Given the shopper is on "/login"
-    When the shopper fills Email with "demo@promptqa.test"
-    And the shopper fills Password with "WrongPassword"
+    When the shopper fills Email with a valid existing email
+    And the shopper fills Password with an invalid password
     And the shopper clicks Sign in
     Then an authentication error is visible
-    And the error is exposed as "login-error"
     And the shopper remains on "/login"
     And the shopper is not signed in
 
   Scenario: Invalid email format is rejected
     Given the shopper is on "/login"
-    When the shopper fills Email with "not-an-email"
-    And the shopper moves focus away from Email
-    Then an inline error is shown on the Email field
+    When the shopper fills Email with an email that has an invalid format
+    And the shopper fills Password with a valid password
+    And the shopper clicks Sign in
+    Then an inline error is shown under the Email field
     And the error communicates that a valid email is required
     And the shopper remains on "/login"
 ```
-
 ## Out of scope
 
-- Creating a new account (`auth-07`, `auth-08`, `auth-09`)
-- Logout as a primary behavior (`auth-02`) — except asserting that Logout is visible after a successful login
-- Checkout redirect to `/login` (`checkout-03`)
-- API-level login mocks (`api-05`)
-- Clinic-specific authentication (Clinic uses the same Shop **Sign in** entry point)
+- Creating a new account
+- Logout as a primary behavior — except asserting that Logout is visible after a successful login
+- Checkout redirect to `/login`
+- API-level login mocks
 
 ## Automation notes
 
