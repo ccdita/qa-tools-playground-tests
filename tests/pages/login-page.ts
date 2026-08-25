@@ -40,6 +40,7 @@ export class LoginPage {
      */
     async goto(): Promise<void> {
         await this.page.goto('/login');
+        if (await this.skipTourButton.isVisible()) { await this.closeWelcomeModal(); }
     }
 
     /**
@@ -60,6 +61,7 @@ export class LoginPage {
     async login(email: string, password: string): Promise<void> {
         await this.enterCredentials(email, password);
         await this.signInButton.click();
+        await this.page.waitForURL('/');
     }
 
     /**

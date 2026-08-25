@@ -5,8 +5,6 @@ test.describe('login page', () => {
     test('should log in with valid credentials', async ({ loginPage, qaToolsHomePage }) => {
         await loginPage.goto();
 
-        if (await loginPage.skipTourButton.isVisible()) { await loginPage.closeWelcomeModal(); }
-
         await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
 
         await expect(qaToolsHomePage.page).toHaveURL('/');

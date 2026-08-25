@@ -28,6 +28,7 @@ export class ShopHomePage {
      */
     async goto(): Promise<void> {
         await this.page.goto('/products');
+        if (await this.skipTourButton.isVisible()) { await this.closeWelcomeModal(); }
     }
 
     /**
@@ -35,6 +36,7 @@ export class ShopHomePage {
      */
     async clickSignInButton(): Promise<void> {
         await this.signInButton.click();
+        await this.page.waitForURL(/\/login$/);
     }
 
     /**
