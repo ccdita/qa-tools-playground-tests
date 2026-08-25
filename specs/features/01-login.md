@@ -48,7 +48,7 @@ Feature: Shop login
     When the shopper fills Email with a valid existing email
     And the shopper fills Password with a valid existing password
     And the shopper clicks Sign in
-    Then the shopper is redirected to "/"
+    Then the shopper is redirected to the QATools Playground main home page
     And the navbar shows the user's name
     And a Logout control is visible
     And Sign in is not visible in the navbar
