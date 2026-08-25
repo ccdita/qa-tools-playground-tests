@@ -1,6 +1,6 @@
-# QATools Playground Tests - Project Constitution
+# QATools Playground Shop Tests - Project Constitution
 
-This document is the **supreme reference** for how the QATools Playground Tests project operates. All work on the project (human and AI) **must** align with it. When in doubt, use this file and the specs it references as the source of truth.
+This document is the **supreme reference** for how the QATools Playground Shop Tests project operates. All work on the project (human and AI) **must** align with it. When in doubt, use this file and the specs it references as the source of truth.
 
 ## Article I: Specs are the single source of context
 
