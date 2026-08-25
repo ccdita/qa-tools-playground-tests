@@ -85,6 +85,15 @@ Feature: Shop login
     Then an inline error is shown under the Email field
     And the error communicates that a valid email is required
     And the shopper remains on "/login"
+
+  Scenario: Short password is rejected
+    Given the shopper is on "/login"
+    When the shopper fills Email with a valid email
+    And the shopper fills Password with a password that is less than 6 characters
+    And the shopper clicks Sign in
+    Then an inline error is shown under the Password field
+    And the error communicates that a password at least 6 characters long is required
+    And the shopper remains on "/login"
 ```
 ## Out of scope
 
