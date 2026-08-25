@@ -43,13 +43,6 @@ export class LoginPage {
     }
 
     /**
-     * Navigates to the home (Shop) page
-     */
-    async gotoShop(): Promise<void> {
-        await this.page.goto('/');
-    }
-
-    /**
      * Enters the email and password into the login form
      * @param email to enter into the email input
      * @param password to enter into the password input
@@ -73,6 +66,6 @@ export class LoginPage {
      * Closes the Welcome modal by clicking the Skip tour button in the modal
      */
     async closeWelcomeModal(): Promise<void> {
-        this.skipTourButton.click();
+        await this.skipTourButton.click();
     }
 }

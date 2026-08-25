@@ -27,27 +27,27 @@ export class ShopHomePage {
      * Navigates to the Shop home page
      */
     async goto(): Promise<void> {
-        await this.page.goto('/');
+        await this.page.goto('/products');
     }
 
     /**
      * Clicks the Sign in button to navigate to the login page
      */
     async clickSignInButton(): Promise<void> {
-        this.signInButton.click();
+        await this.signInButton.click();
     }
 
     /**
      * Clicks the Log out button to log out of the application
      */
     async logOut(): Promise<void> {
-        this.logOutButton.click();
+        await this.logOutButton.click();
     }
 
     /**
      * Closes the Welcome modal by clicking the Skip tour button in the modal
      */
     async closeWelcomeModal(): Promise<void> {
-        this.skipTourButton.click();
+        await this.skipTourButton.click();
     }
 }

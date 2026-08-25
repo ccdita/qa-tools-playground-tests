@@ -6,9 +6,9 @@ test.describe('Shop home page', () => {
 
         await shopHomePage.goto();
 
-        if (await shopHomePage.skipTourButton.isVisible()) { shopHomePage.closeWelcomeModal(); }
+        if (await shopHomePage.skipTourButton.isVisible()) { await shopHomePage.closeWelcomeModal(); }
 
-        await expect(shopHomePage.page).toHaveURL('/');
+        await expect(shopHomePage.page).toHaveURL(/\/products$/);
 
         await expect(shopHomePage.navBar).toBeVisible();
         await expect(shopHomePage.signInButton).toBeVisible();

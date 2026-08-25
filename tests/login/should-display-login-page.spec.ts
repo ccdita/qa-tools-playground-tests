@@ -6,7 +6,7 @@ test.describe('Login page', () => {
 
         await loginPage.goto();
 
-        if (await loginPage.skipTourButton.isVisible()) { loginPage.closeWelcomeModal(); }
+        if (await loginPage.skipTourButton.isVisible()) { await loginPage.closeWelcomeModal(); }
 
         await expect(loginPage.page).toHaveURL(/\/login$/);
 
